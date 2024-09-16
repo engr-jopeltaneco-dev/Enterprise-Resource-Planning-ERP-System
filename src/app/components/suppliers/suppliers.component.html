@@ -1,0 +1,72 @@
+<div>
+  <form [formGroup]="supplierForm" (ngSubmit)="addSupplier()">
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="supplierName"
+        placeholder="Supplier Name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="address" placeholder="Address" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="phoneNumber"
+        placeholder="Phone Number"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="email"
+        placeholder="Email"
+        type="email"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Add Supplier
+    </button>
+  </form>
+
+  <table mat-table [dataSource]="suppliers" class="mat-elevation-z8">
+    <!-- Table columns for Supplier -->
+    <ng-container matColumnDef="supplierName">
+      <th mat-header-cell *matHeaderCellDef>Supplier Name</th>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.supplierName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.address }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="phoneNumber">
+      <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.phoneNumber }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.email }}</td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="['supplierName', 'address', 'phoneNumber', 'email']"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="
+        let row;
+        columns: ['supplierName', 'address', 'phoneNumber', 'email']
+      "
+    ></tr>
+  </table>
+</div>

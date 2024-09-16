@@ -1,0 +1,60 @@
+// Define your color palette
+$color-background: #E9EFEC;
+$color-secondary: #C4DAD2;
+$color-primary: #6A9C89;
+$color-accent: #16423C;
+
+// Sidenav container styling
+mat-sidenav-container {
+  height: 100vh;
+  background-color: $color-background;
+}
+
+// Sidenav styling
+mat-sidenav {
+  background-color: $color-primary;
+  color: white;
+  font-family: Arial, sans-serif;
+
+  // Sidenav list styling
+  mat-nav-list {
+    padding: 0;
+  }
+
+  // Individual list item styling
+  mat-list-item {
+    padding: 24px 32px; // Added padding for better icon visibility
+    font-size: 40px; // Larger font size
+    font-weight: 900; // Boldest text
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 8px; // Rounded corners for hover effect
+    margin-bottom: 24px; // Larger spacing between items
+    line-height: 1.6; // Increased line spacing for readability
+
+    &:hover {
+      background-color: $color-accent;
+      cursor: pointer; // Changes cursor to pointer on hover
+    }
+
+    // Icon styling
+    mat-icon {
+      font-size: 48px; // Larger icon size
+      margin-right: 20px; // Increased spacing to ensure icons are fully visible
+    }
+
+    // Text styling
+    span {
+      margin-left: 10px; // Space between icon and text
+    }
+  }
+}
+
+// Sidenav content styling
+mat-sidenav-content {
+  background-color: $color-secondary;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 24px; // Larger font size for content
+}

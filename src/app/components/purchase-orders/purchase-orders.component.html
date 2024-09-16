@@ -1,0 +1,60 @@
+<div>
+  <form [formGroup]="purchaseOrderForm" (ngSubmit)="addPurchaseOrder()">
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="supplierID"
+        placeholder="Supplier ID"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="productID"
+        placeholder="Product ID"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="quantity"
+        placeholder="Quantity"
+        type="number"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="purchaseDate"
+        placeholder="Purchase Date"
+        [matDatepicker]="picker"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Add Purchase Order
+    </button>
+  </form>
+
+  <table mat-table [dataSource]="purchaseOrders" class="mat-elevation-z8">
+    <!-- Define table columns similarly to your employee.component.html -->
+    <ng-container matColumnDef="supplierID">
+      <th mat-header-cell *matHeaderCellDef>Supplier ID</th>
+      <td mat-cell *matCellDef="let order">{{ order.supplierID }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="productID">
+      <th mat-header-cell *matHeaderCellDef>Product ID</th>
+      <
+    </ng-container>
+  </table>
+</div>
