@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/customers",
+    "/employees",
+    "/inventory-items",
+    "/purchase-orders",
+    "/sales-orders",
+    "/suppliers"
+  ]
+}
